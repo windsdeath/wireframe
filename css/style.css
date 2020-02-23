@@ -1,0 +1,259 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "나눔고딕";
+    color:#222328;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #ffffff;
+}
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 700px;
+    background: #efefef;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    height: 100px;
+    background: black;
+}
+.logo{
+    color: white;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+}
+.nav{
+    box-sizing: border-box;
+    width: 1000px;
+    background: darkgray;
+    display: flex;
+    justify-content: flex-end;
+}
+div.nav ul{
+    box-shadow: 
+    /* 2px 0 0 0 #888, */
+    /* 0 2px 0 0 #888,  */
+    /* 2px 2px 0 0 #888, */
+    2px 0 0 0 #888 inset, 
+    -2px 0 0 0 #888 inset, 
+    0 2px 0 0 #888 inset,
+    0 -2px 0 0 #888 inset;
+    text-align: center;
+    display: flex;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.nav ul:hover .sub_menu{
+    z-index: 999;
+}
+.nav ul:hover .sub_menu a
+{
+    z-index: 999;
+    display: block;
+}
+.nav ul li:hover .menu{
+    z-index: 1000;
+    background: white;
+    transition: all 1s;
+
+}
+.nav ul li{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+.nav ul li a{
+    line-height: 100px;
+    width: 200px;
+    height: 100px;
+}
+body > div.wrap > section.header > div.nav > ul > li:nth-child(1),
+body > div.wrap > section.header > div.nav > ul > li:nth-child(2),
+body > div.wrap > section.header > div.nav > ul > li:nth-child(3){
+    box-shadow: 2px 0 0 0 #888;
+}
+.sub_menu{
+    box-shadow: none !important;
+    flex-direction: column;
+    background: dimgray;
+}
+.sub_menu a{
+    color: white;
+    font-weight: normal;
+    transition: all 1s;
+    display: none;
+}
+.sub_menu a:hover{
+    background: white;
+    transition: all 1s;
+    color:black;
+}
+.slide{
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+}
+.slide ul{
+    height: calc(300px*3);
+    animation: slide 9s infinite;
+}
+.slide li:nth-child(1){
+    background-image:url("../images/img.JPG");
+}
+.slide li:nth-child(2){
+    background-image:url("../images/img.JPG");
+}
+.slide li:nth-child(3){
+    background-image:url("../images/img.JPG");
+}
+.slide li{
+   height: 300px;
+}
+
+@keyframes slide{
+    0%{margin-top: 0;}
+    25%{margin-top: 0;}
+    33%{margin-top: -300px;}
+    58%{margin-top: -300px;}
+    66%{margin-top: -600px;}
+    91%{margin-top: -600px;}
+    100%{margin-top: 0;}
+}
+.content{
+    width: 1200px;
+    height: 200px;
+    background: blue;
+    display: flex;
+}
+.tabs{
+    width: 33.333%;
+    display: flex;
+    background: white;
+}
+.tabs input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 60px;
+    height: 45px;
+    opacity: 0;
+    z-index: 1000;
+}
+.tabs input:not(:checked) {cursor: pointer;}
+.tabs input:not(:checked) + label {color: white;}
+.tabs input:checked + label a {
+    color: black;
+    background: white;
+}   
+
+label a{
+    background: gray;
+    padding: 5px;
+    pointer-events: none;
+    /* cursor: default; */
+}
+.content_1,
+.content_2{
+    width: 20%;
+    height: 130px;
+    top:447px;
+    left: 260px;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+}
+.content_2{
+    display: flex;
+}
+.content_1 p{
+    cursor: pointer;
+}
+button{
+cursor: pointer;
+}
+.content_1 h3{
+    border-bottom: 2px solid bisque;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+.box{
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    box-shadow:2px 2px 3px 3px rgba(0,0,0,0.1);
+}
+.notice{
+    font-size: 16px;
+}
+.notice:checked ~ .content_1{
+    z-index: 999;
+}
+.gallery{
+    left: 120px;
+    font-size: 16px;
+}
+.gallery:checked ~ .content_2{
+    z-index: 999;
+}
+.banner{
+    width: 33.333%;
+    background-image: url(../images/img.jpg);
+}
+.goto a img{
+    width: 100%;
+    height: 100%;
+}
+.goto{
+    width: 33.333%;
+
+}
+
+
+.footer{
+    width: 1200px;
+    height: 100px;
+    background: black;
+
+}
+.popup{
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    top:50%;
+    left: 40%;
+    border:1px solid black;
+    background: white;
+    width: 400px;
+    height: 300px;
+    
+}
+.popup button{
+    font-size: 16px;
+    padding: 4px;
+}
+.popup button,
+.popup p,
+.popup h3{
+    margin: 10px;
+}
+.pop{
+    opacity: 1;
+}
